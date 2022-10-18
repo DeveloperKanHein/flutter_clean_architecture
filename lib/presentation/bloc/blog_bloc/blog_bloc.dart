@@ -12,7 +12,7 @@ class BlogBloc extends Bloc<BlogEvent, BlogState>
 {
   BlogBloc() : super(BlogLoading())
   {
-    final GetBlog getBlog = GetBlog(blogRepository: BlogRepositoryImpl(remoteDataSource: RemoteDataSourceSingleton.instance()));
+    final GetBlog getBlog = GetBlog(blogRepository: BlogRepositoryImpl(remoteDataSource: RemoteDataSourceSingleton.instance));
     on<GetBlogList>((event, emit) async {
       try{
         emit(BlogLoading());

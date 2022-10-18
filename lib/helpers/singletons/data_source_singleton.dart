@@ -3,10 +3,6 @@ import 'dio_singleton.dart';
 
 class DataSourceSingleton
 {
-  static DataSource? dataSource;
-  static DataSource instance()
-  {
-    dataSource ??= DataSource(DioSingleton.instance());
-    return dataSource!;
-  }
+  static DataSource? _dataSource;
+  static DataSource get instance => _dataSource ??= DataSource(DioSingleton.instance());
 }
